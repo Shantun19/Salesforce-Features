@@ -1,0 +1,38 @@
+🔹 What your Salesforce is showing:
+Default Time Zone = (GMT-04:00) Eastern Daylight Time (America/New_York)
+This means it is 4 hours behind UTC (Coordinated Universal Time).
+
+| Time Zone                   | Offset from UTC | Example Time (12:00 PM UTC) |
+| --------------------------- | --------------- | --------------------------- |
+| UTC                         | +00:00          | 12:00 PM                    |
+| Eastern Daylight Time (EDT) | -04:00          | 8:00 AM                     |
+| Indian Standard Time (IST)  | +05:30          | 5:30 PM                     |
+
+| EDT (Salesforce Default) | UTC      | IST                |
+| ------------------------ | -------- | ------------------ |
+| 12:00 AM (midnight)      | 4:00 AM  | 9:30 AM            |
+| 6:00 AM                  | 10:00 AM | 3:30 PM            |
+| 12:00 PM (noon)          | 4:00 PM  | 9:30 PM            |
+| 6:00 PM                  | 10:00 PM | 3:30 AM (next day) |
+
+Yes! Let's walk through why your Apex job scheduled for 1:00 AM (on 2 July in EDT) is actually running at 10:30 AM on 3 July IST.
+
+Step-by-step Time Zone Explanation
+	Your Salesforce org's time zone is:
+
+		EDT (GMT -4)
+
+You are in:
+
+	IST (GMT +5:30)
+
+The time difference between EDT and IST is 9 hours and 30 minutes.
+
+You scheduled the job at:
+
+	1:00 AM on 2 July (EDT)
+	
+Let's convert that to IST:
+	1:00 AM EDT + 9 hours 30 minutes = 10:30 AM IST (on 2 July)
+	
+So the correct IST equivalent should be 10:30 AM on 2 July, not 3 July.
