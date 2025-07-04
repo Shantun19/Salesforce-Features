@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="check app is console app or not">
+        <p class="slds-p-around_x-small">this app is a console app <strong>{isConsoleNavigation}</strong></p>
+        <!-- open a tab using the record Ids -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a new tab" onclick={handleOpenTabUsingRecordId}></lightning-button>
+        </div>
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a Tab using Url" onclick={handleOpenTabUsingUrl}></lightning-button>
+        </div>
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a Tab using PageRef" onclick={handleOpenTabUsingPageRef}></lightning-button>
+        </div>
+        <hr>
+        <p class="slds-p-around_x-small">this app is a console app <strong>{isConsoleNavigation}</strong></p>
+        <!-- open a sub tab using the record Ids -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a new sub tab" onclick={handleOpenSubTabUsingRecordId}></lightning-button>
+        </div>
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a sub Tab using Url" onclick={handleOpenSubTabUsingUrl}></lightning-button>
+        </div>
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Open a sub Tab using PageRef"
+                onclick={handleOpenSubTabUsingPageRef}></lightning-button>
+        </div>
+        <!-- closing the tab -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="closing Tab using Async" onclick={handleCloseTabUsingAsync}></lightning-button>
+        </div>
+        <!-- handle closing all the sub tabs  -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="closing Sub Tab" onclick={handleCloseSubTab}></lightning-button>
+        </div>
+        <!-- refresh the tab -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="Refreshing the Tab" onclick={handleRefreshTab}></lightning-button>
+        </div>
+        <!-- set the label of the tab -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="set the label of the tab" onclick={handleSetTabLabel}></lightning-button>
+        </div>
+        <!-- focus the tab -->
+        <div class="slds-p-around_x-small">
+            <lightning-button label="set the focus tab" onclick={handleSetFocus}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
