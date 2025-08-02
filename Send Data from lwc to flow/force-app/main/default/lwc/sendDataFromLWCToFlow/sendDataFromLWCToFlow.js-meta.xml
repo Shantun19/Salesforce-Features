@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <!-- The isExposed element is set to true, which makes the component available for use in tools like the Lightning App Builder or Flow Builder.  -->
+    <isExposed>true</isExposed>
+    <!-- The targets element is used to specify where your component can be used. In this case, the lightning__FlowScreen tag means that this component is intended to be used in Salesforce Flow screens. -->
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <!-- The targetConfigs and targetConfig elements allow you to define properties that can be set in the builder context. In this case, the properties are latitude and longitude. Both are set to be of the Integer type and have the role of outputOnly, meaning they can be set in the Flow, but cannot be modified by the user within the component. These properties can be used to pass data from the LWC to the Flow. -->
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property label="Latitude" name="latitude"  type="Integer" role="outputOnly"/>
+            <property label="Longitude" name="longitude" type="Integer" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
