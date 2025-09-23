@@ -7,8 +7,8 @@ The **deployment user** is simply the Salesforce user whose credentials are bein
 - If you deploy via **Salesforce CLI, Copado, Bitbucket pipeline, Gearset, or Jenkins**, the pipeline runs under a **dedicated integration user** (sometimes called *CI/CD user*).
 
 👉 **Example:**  
-- You log in as `michael.mazzotta@ct.gov.ctds.stg005` and push a flow to UAT.  
-- In this case, **Michael is the deployment user**.  
+- You log in as `casy.deploymentuser@test.com` and push a flow to UAT.  
+- In this case, **casy is the deployment user**.  
 
 ---
 
