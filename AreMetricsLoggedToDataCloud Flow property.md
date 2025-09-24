@@ -51,9 +51,3 @@ You tried deploying a flow with this property
 (`AreMetricsLoggedToDataCloud`) into an org on **API version 62.0**,
 where this field isn't recognized yet → so Salesforce flagged it as
 invalid.
-
-------------------------------------------------------------------------
-
-👉 Do you want me to also show you **how to fix this error** during
-deployment (by either removing this property or upgrading your flow's
-API version)?
