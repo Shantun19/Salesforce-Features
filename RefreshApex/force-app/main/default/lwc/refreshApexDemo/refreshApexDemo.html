@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Refresh Apex Demo">
+        
+        <lightning-button label="Delete Account" onclick={handleDeleteAccount}></lightning-button>
+        <!-- lightning data table -->
+        <!-- with the help of max row select you can select one row at a time  -->
+        <!-- onrowselection - what happen when someone select the row / record -->
+        <lightning-datatable key-field="Id" data={accounts} columns={columns} max-row-selection="1"
+            onrowselection={handleSelectedRow}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
