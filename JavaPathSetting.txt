@@ -1,0 +1,46 @@
+🧠 1. What are Environment Variables?
+	- Think of environment variables as global settings that your computer uses to find things or remember important information.
+	- 💡 Example:
+		- Imagine your computer is a big office building.
+		- If you tell everyone “the printer is in Room 203,” people can find it easily.
+		- If you don’t tell them, they’ll say, “I don’t know where the printer is!”
+		Here, environment variables are like those office signs — they tell Windows where to find programs and files.
+		
+⚙️ 2. What is JAVA_HOME?
+	JAVA_HOME is an environment variable that tells your computer where Java is installed.(JAVA_HOME = C:\Program Files\Java\jdk-17)
+	So when Notepad++ or any other program says,
+		“Hey, I need Java — where is it?”
+			- Windows looks at JAVA_HOME and says,
+				- “It’s right here → C:\Program Files\Java\jdk-17”
+	If JAVA_HOME is empty or missing, programs (like Notepad++ or Eclipse) can’t find Java, and you see the error:
+		- >>> ERROR: JAVA_HOME property is empty
+
+🛠️ 3. What is the “Path” Variable?
+	Path is another environment variable — but this one is special.
+	It tells Windows where to look for programs when you type their names in Command Prompt.
+	💡 Example:
+		- If you type javac in Command Prompt, Windows doesn’t know what that means — unless you tell it where javac.exe lives.
+		- By adding this line to your Path:
+			- %JAVA_HOME%\bin
+		you’re telling Windows:
+			- “When someone types javac, go look inside the bin folder of the Java installation.”
+		So now you can run javac or java from anywhere in your system.
+
+🧱 4. What are “System Variables” vs “User Variables”?
+	When you opened “Environment Variables,” you saw two sections:
+	| Type                 | Applies To                     | Example                           |
+	| -------------------- | ------------------------------ | --------------------------------- |
+	| **User variables**   | Only your Windows account      | Temporary settings for one person |
+	| **System variables** | The whole computer (all users) | `JAVA_HOME`, `Path`               |
+	
+	So when we set JAVA_HOME in System Variables, it means every user and every program on the computer can find Java.
+	
+🔍 5. Why do you get the error?
+	Because:
+		- Notepad++ tried to compile Java code,
+		- It looked for Java using the variable JAVA_HOME,
+		- But it was empty or not set,
+		- So Notepad++ couldn’t find javac (the Java compiler).
+	Hence:
+		ERROR: JAVA_HOME property is empty
+	Once you set JAVA_HOME correctly, Notepad++ can locate Java and compile your .java file properly ✅
