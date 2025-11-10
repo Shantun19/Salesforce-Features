@@ -39,6 +39,6 @@ public class EmailManager {
 to run this code 
 
 EmailManager em = new EmailManager();
-em.sendMail('shantun@shrinesoft.com', 'Trailhead Tutorial', '123 body');
+em.sendMail('emailaddress@gmail.com', 'Trailhead Tutorial', '123 body');
 
 */
