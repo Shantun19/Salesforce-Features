@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Re Issue Email">
+        <div class="slds-m-around_medium">
+
+            <!-- Row: Email Input + Add Button -->
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+
+                <!-- Email Input (70%) -->
+                <div class="slds-col slds-size_3-of-4">
+                    <lightning-input type="email" placeholder="Email Address" value={emailValue}
+                        onchange={handleEmailChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Add Email Button (30%) -->
+                <div class="slds-col slds-size_1-of-4 slds-m-top_large">
+                    <lightning-button label="Add Email" variant="brand" onclick={handleAddEmail}>
+                    </lightning-button>
+                </div>
+
+            </div>
+
+            <!-- Pills -->
+            <template if:true={emailPills.length}>
+                <div class="slds-m-top_medium">
+                    <lightning-pill-container items={emailPills} onitemremove={handlePillRemove}>
+                    </lightning-pill-container>
+                </div>
+            </template>
+
+        </div>
+        <div class="slds-m-around_medium" style="display: flex;justify-content:end;gap:5px">
+            <lightning-button label="Cancel" variant="" onclick={handleCancelFlow}></lightning-button>
+            <lightning-button label="Send" variant="brand" onclick={handleSendEmail}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
